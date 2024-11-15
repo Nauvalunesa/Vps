@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPS Bytevirt by nov</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+            padding: 20px;
+        }
+
+        .product-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .product {
+            min-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            border: 2px solid #ccc;
+        }
+
+        .product h2,
+        .product p,
+        .product ul {
+            margin: 10px 0;
+        }
+
+        .product ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .product ul li {
+            margin: 5px 0;
+        }
+
+        .qris-button,
+        .confirm-button {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .qris-button:hover,
+        .confirm-button:hover {
+            background-color: #2575fc;
+        }
+
+        .qris-image {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showQRIS(price, productId) {
+            // Hide all QRIS images
+            var allQrisImages = document.querySelectorAll('.qris-image');
+            allQrisImages.forEach(function(img) {
+                img.style.display = 'none';
+            });
+
+            // Determine the correct image URL based on the price
+            var imgSrc = '';
+            switch (price) {
+                case 2.6:
+                    imgSrc = 'https://pomf2.lain.la/f/gkun41c.png';
+                    break;
+                case 3.5:
+                    imgSrc = 'https://pomf2.lain.la/f/nboqo74.png';
+                    break;
+                case 4.1:
+                case 4.2:
+                    imgSrc = 'https://pomf2.lain.la/f/uo55702u.png';
+                    break;
+                case 5.1:
+                    imgSrc = 'https://pomf2.lain.la/f/qu49up2n.png';
+                    break;
+                case 6.1:
+                case 6.2:
+                    imgSrc = 'https://pomf2.lain.la/f/tutiz14.png';
+                    break;
+                default:
+                    imgSrc = 'https://via.placeholder.com/256';
+            }
+
+            // Show the selected QRIS image
+            var qrisImage = document.getElementById(`qris-${productId}`);
+            qrisImage.src = imgSrc;
+            qrisImage.style.display = 'block';
+
+            alert(`Nominal pembayaran: $${price}\nSilahkan scan QRIS untuk membayar`);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>List VPS Bytevirt by nov</h1>
+    <p>Harga berdasarkan kurs dolar Amerika nomer admin wa.me/6285336580720 cara pembelian pilih produk bayar pake qris download qris yang muncul lalu konfirmasi ke admin sambil bilang vps apa dan bukti pembayaran</p>
+
+    <div class="product-slider">
+        <div class="product">
+            <h2>Region USA Biasa</h2>
+            <p>CPU: Intel Xeon E3-1241 V3 (3.499Ghz)</p>
+            <ul>
+                <li>Ram 2 GB 1 core: $2.6</li>
+                <li>Ram 4 GB 2 core: $4.1</li>
+                <li>Ram 5 GB 3 core: $6.2</li>
+            </ul>
+            <button class="qris-button" onclick="showQRIS(2.6, 'usa-biasa-2gb')">Bayar Ram 2 GB</button>
+            <button class="qris-button" onclick="showQRIS(4.1, 'usa-biasa-4gb')">Bayar Ram 4 GB</button>
+            <button class="qris-button" onclick="showQRIS(6.2, 'usa-biasa-5gb')">Bayar Ram 5 GB</button>
+            <img id="qris-usa-biasa-2gb" class="qris-image" alt="QRIS">
+            <img id="qris-usa-biasa-4gb" class="qris-image" alt="QRIS">
+            <img id="qris-usa-biasa-5gb" class="qris-image" alt="QRIS">
+            <button class="confirm-button" onclick="window.location.href='https://wa.me/6285336580720?text=Mau+konfirmasi+pembayaran'">Konfirmasi Pembayaran</button>
+        </div>
+
+        <div class="product">
+            <h2>Region Singapura & Jepang</h2>
+            <p>CPU: AMD RYZEN 9 3900X (3.799Ghz)</p>
+            <ul>
+                <li>Ram 2 GB 2 core: $3.5</li>
+                <li>Ram 4 GB 2 core: $5.1</li>
+            </ul>
+            <button class="qris-button" onclick="showQRIS(3.5, 'sg-japan-2gb')">Bayar Ram 2 GB</button>
+            <button class="qris-button" onclick="showQRIS(5.1, 'sg-japan-4gb')">Bayar Ram 4 GB</button>
+            <img id="qris-sg-japan-2gb" class="qris-image" alt="QRIS">
+            <img id="qris-sg-japan-4gb" class="qris-image" alt="QRIS">
+            <button class="confirm-button" onclick="window.location.href='https://wa.me/6285336580720?text=Mau+konfirmasi+pembayaran'">Konfirmasi Pembayaran</button>
+        </div>
+
+        <div class="product">
+            <h2>Region USA Performance</h2>
+            <p>CPU: AMD RYZEN 9 7950X3 (4.199 GHz)</p>
+            <ul>
+                <li>Ram 2 GB 1 core: $4.1</li>
+                <li>Ram 4 GB 2 core: $6.1</li>
+            </ul>
+            <button class="qris-button" onclick="showQRIS(4.1, 'usa-performance-2gb')">Bayar Ram 2 GB</button>
+            <button class="qris-button" onclick="showQRIS(6.1, 'usa-performance-4gb')">Bayar Ram 4 GB</button>
+            <img id="qris-usa-performance-2gb" class="qris-image" alt="QRIS">
+            <img id="qris-usa-performance-4gb" class="qris-image" alt="QRIS">
+            <button class="confirm-button" onclick="window.location.href='https://wa.me/6285336580720?text=Mau+konfirmasi+pembayaran'">Konfirmasi Pembayaran</button>
+        </div>
+    </div>
+</body>
+
+</html>
